@@ -3,7 +3,7 @@ package t3_exam;
 public class Test6_Lotto2 {
 	public static void main(String[] args) {
 		
-		// 1~45숫자중 6개의 수를 추출후 정렬해서 출력시켜보자(중복 배제) - 숙제
+		// 1~45숫자중 6개의 수를 추출후 정렬해서 출력시켜보자(중복 배제)
 		
 		int[] lotto =  new int[6];
 		
@@ -11,6 +11,12 @@ public class Test6_Lotto2 {
 		for(int i=0; i<lotto.length; i++) {
 			int su = (int)(Math.random()*45) + 1;
 			lotto[i] = su;
+			for(int j=0; j<i; j++) {
+				if(lotto[i]==lotto[j]) {
+					i--;
+					break;
+				}
+			}
 		}
 		
 		// 6개의 로또 번호를 정렬해서 출력
